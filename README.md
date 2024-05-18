@@ -14,6 +14,8 @@
 ***
 ## 💠 Application Structure 
 
+<p align= "center"> <img width="700" alt="SimpleDrive-solution-design" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/a8de4f49-1cd2-46e7-8314-010f84998ed3"> </p>
+
 ## 💠 Building and Running the app
 
 
