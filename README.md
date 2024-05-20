@@ -10,10 +10,10 @@
 * [Building and Running the app](#application-structure)
 * [Curl Requests](#testing-strategy)
 * [Testing](#building-and-running-the-application)
-* [Scenarios] (#data-storage-options)
+* [Scenarios](#data-storage-options)
 
 ***
-## 💠 Application Structure 
+## 💠 Solution Architecture 
 
 <p align= "center"> <img width="700" alt="SimpleDrive-solution-design" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/a8de4f49-1cd2-46e7-8314-010f84998ed3"> </p>
 
@@ -36,12 +36,12 @@
   ``` 
   
 ## 💠 Curl Requests 
-- Generate token
+### ✦ Generate token
 ```
 curl -XPOST localhost:3000/v1/token --data '{"email": "raneemalrashoud@gmail.com"}' --header "Content-Type: application/json"
 ```
 
-### Create blob
+### ✦ Create blob
 - Request:
 
 ```
@@ -56,7 +56,7 @@ curl -v -XPOST localhost:3000/v1/blobs --data '{"id": "8455F420-F02E-45F9-8123-D
 }
 ```
 
-### Get blob
+### ✦ Get blob
 - Request:
 ```
 curl localhost:3000/v1/blobs/<id> --header 'Authorization: Bearer <generated-token>'
@@ -72,28 +72,33 @@ curl localhost:3000/v1/blobs/<id> --header 'Authorization: Bearer <generated-tok
   }
 ```
 
-- ### Get all blobs
+- ### ✦ Get all blobs
 ```
 curl localhost:3000/v1/blobs --header 'Authorization: Bearer <generated-token>'
 ```
 
 ## 💠 Scenarios (Data Storage Options)
 ### a. Amazon S3 Compatible Storage
-<p align= "center"> <img width="600" alt="aws-s3" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/4ee1efb2-2b74-4ed7-a52c-9b34eacf16d0"> </p>
+<p align= "center"> <img width="600" alt="aws-s3" src="https://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/253746ee-9181-4b11-bb0c-fa2e331da48b"> </p>
 
 ### b. FTP
-<p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/305fe577-b21d-46a7-a748-2e3ad43e66fd"> </p>
+<p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/43bd3380-1f46-464e-b98a-d4f5ea5dfadd"> </p>
 
 ### c. Postgres DB
+<p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/2f230c57-cbc2-491d-a5cb-24930658b23b"> </p>
 
 ### d. Local Storage 
+<p align= "center"> <img width="600" alt="FTP" src="hhttps://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/56905ede-5e0d-434b-8a41-847cc580f3d3"> </p>
 
 
 ## 💠 Testing
-- Unit Testing
+
+
+### ✦ Unit Testing
+
   
-- Integration Testing
-`bundle exec rspec`
+### ✦ Integration Testing
+
 
 ## 💠 References 
 - [Create a signed AWS API request](https://docs.aws.amazon.com/IAM/latest/UserGuide/create-signed-request.html)
