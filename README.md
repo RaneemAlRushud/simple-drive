@@ -85,19 +85,35 @@ curl localhost:3000/v1/blobs --header 'Authorization: Bearer <generated-token>'
 <p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/43bd3380-1f46-464e-b98a-d4f5ea5dfadd"> </p>
 
 ### c. Postgres DB
-<p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/2f230c57-cbc2-491d-a5cb-24930658b23b"> </p>
+<p align= "center"> <img width="600" alt="DB" src="https://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/2f230c57-cbc2-491d-a5cb-24930658b23b"> </p>
 
 ### d. Local Storage 
-<p align= "center"> <img width="600" alt="FTP" src="hhttps://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/56905ede-5e0d-434b-8a41-847cc580f3d3"> </p>
+<p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/d217390a-07dc-4b0c-a042-c5f2688fced7"> </p>
 
 
 ## 💠 Testing
-
+- Facker lib ()
+- ...
+<p> 
+The following use cases have been tested:
+</p>
 
 ### ✦ Unit Testing
-
+- 201 for post data
+- 200 get data by id
+- 401 if unauthenticated
+- 400 if invalid base64
+- 400 if existed id
   
 ### ✦ Integration Testing
+<p>
+In our case will be the integration with data storage services:
+</p>
+- command output screenshots
+- store and retrieve from S3
+- store and retrieve from FTP
+- store and retrieve from DB
+- store and retrieve from Local
 
 
 ## 💠 References 
