@@ -36,12 +36,12 @@
   ``` 
   
 ## 💠 Curl Requests 
-### ✦ Generate token
+- ### ✦ Generate token
 ```
 curl -XPOST localhost:3000/v1/token --data '{"email": "raneemalrashoud@gmail.com"}' --header "Content-Type: application/json"
 ```
 
-### ✦ Create blob
+- ### ✦ Create blob
 - Request:
 
 ```
@@ -56,7 +56,7 @@ curl -v -XPOST localhost:3000/v1/blobs --data '{"id": "8455F420-F02E-45F9-8123-D
 }
 ```
 
-### ✦ Get blob
+- ### ✦ Get blob
 - Request:
 ```
 curl localhost:3000/v1/blobs/<id> --header 'Authorization: Bearer <generated-token>'
@@ -92,28 +92,13 @@ curl localhost:3000/v1/blobs --header 'Authorization: Bearer <generated-token>'
 
 
 ## 💠 Testing
-- Facker lib ()
-- ...
-<p> 
-The following use cases have been tested:
-</p>
 
-### ✦ Unit Testing
-- 201 for post data
-- 200 get data by id
-- 401 if unauthenticated
-- 400 if invalid base64
-- 400 if existed id
+
+- ### ✦ Unit Testing
+
   
-### ✦ Integration Testing
-<p>
-In our case will be the integration with data storage services:
-</p>
-- command output screenshots
-- store and retrieve from S3
-- store and retrieve from FTP
-- store and retrieve from DB
-- store and retrieve from Local
+- ### ✦ Integration Testing
+
 
 
 ## 💠 References 
