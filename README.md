@@ -41,27 +41,48 @@
 curl -XPOST localhost:3000/v1/token --data '{"email": "raneemalrashoud@gmail.com"}' --header "Content-Type: application/json"
 ```
 
-- Create blob
+### Create blob
+- Request:
+
 ```
-curl -v -XPOST localhost:3000/v1/blobs --data '{"id": "9a098146-4b22-4865-98f6-8eab7985kk1c", "data": "YWRmYXNkZmFzZGZhc2Rm"}' --header "Content-Type: application/json" --header 'Authorization: Bearer <generated-token>'
+curl -v -XPOST localhost:3000/v1/blobs --data '{"id": "8455F420-F02E-45F9-8123-D5454A84147A", "data": "yixyvRL2c+8b/pe4CuV+vw=="}' --header "Content-Type: application/json" --header 'Authorization: Bearer <generated-token>'
 ```
 
-- Get blob
+- Response:
+```
+{
+  "id": "8455F420-F02E-45F9-8123-D5454A84147A",
+  "success": true
+}
+```
+
+### Get blob
+- Request:
 ```
 curl localhost:3000/v1/blobs/<id> --header 'Authorization: Bearer <generated-token>'
 ```
 
-- Get all blobs
+- Response:
+```
+{
+  "id":"8455F420-F02E-45F9-8123-D5454A84147A",
+  "data":"yixyvRL2c+8b/pe4CuV+vw==",
+  "size":24,
+  "created_at":"2024-05-20T07:02:20.753Z"
+  }
+```
+
+- ### Get all blobs
 ```
 curl localhost:3000/v1/blobs --header 'Authorization: Bearer <generated-token>'
 ```
 
 ## 💠 Scenarios (Data Storage Options)
 ### a. Amazon S3 Compatible Storage
-<p align= "center"> <img width="600" alt="aws-s3" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/15119d4a-2b11-465c-918f-05d60318d973"> </p>
+<p align= "center"> <img width="600" alt="aws-s3" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/4ee1efb2-2b74-4ed7-a52c-9b34eacf16d0"> </p>
 
 ### b. FTP
-<p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/a0004eb5-4f0d-4ce2-8283-45790adab384"> </p>
+<p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/305fe577-b21d-46a7-a748-2e3ad43e66fd"> </p>
 
 ### c. Postgres DB
 
@@ -80,4 +101,3 @@ curl localhost:3000/v1/blobs --header 'Authorization: Bearer <generated-token>'
 - [File Transfer Protocol (FTP)](https://www.scaler.com/topics/computer-network/file-transfer-protocol/)
 - [Net::FTP](https://ruby-doc.org/stdlib-2.4.0/libdoc/net/ftp/rdoc/Net/FTP.html)
 - [rspec](https://rspec.info/)
-
