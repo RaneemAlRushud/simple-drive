@@ -6,7 +6,7 @@
 
 ## 💠 Table of Contents
 * [Solution Architecture](#solution-architecture)
-* [Building and Running](#building-running)
+* [Building and Running](#building-and-running)
 * [Curl Requests](#curl-requests)
 * [Testing](#testing)
 * [Scenarios (Data Storage Options)](#data-storage-options)
@@ -78,17 +78,22 @@ curl localhost:3000/v1/blobs --header 'Authorization: Bearer <generated-token>'
 ```
 
 ## 💠 Scenarios (Data Storage Options)
+
 ###  a. ✦ Amazon S3 Compatible Storage
-<p align= "center"> <img width="600" alt="aws-s3" src="https://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/253746ee-9181-4b11-bb0c-fa2e331da48b"> </p>
+
+<p align= "center"> <img width="600" alt="aws-s3" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/0ce929ae-6748-44b5-b4c3-f36c996ede92"> </p>
 
 ###  b. ✦ FTP
-<p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/43bd3380-1f46-464e-b98a-d4f5ea5dfadd"> </p>
+
+<p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/2e7e9812-96f6-4bf7-8304-e3587eb2d414"> </p>
 
 ###  c. ✦ Postgres DB
-<p align= "center"> <img width="600" alt="DB" src="https://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/2f230c57-cbc2-491d-a5cb-24930658b23b"> </p>
+
+<p align= "center"> <img width="600" alt="DB" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/fcd175c6-1e03-42a1-a947-26f0cf0aa514"> </p>
 
 ###  d. ✦ Local Storage 
-<p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/d217390a-07dc-4b0c-a042-c5f2688fced7"> </p>
+
+<p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/3ea58fa5-b0a2-4c34-8117-e1d9a9c8b229"> </p>
 
 
 ## 💠 Testing
