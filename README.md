@@ -14,7 +14,7 @@
 ***
 ## 💠 Application Structure 
 
-## 💠 Building and Running the app
+## Building and Running the app
 
 
 - ruby-3.1.2
