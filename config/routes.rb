@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope :v1 do
     # resources :blobs, only: [:create]
-    # resources :blobs, only: [:index]
+   resources :blobs, only: [:index]
     
     post '/blobs', to: 'blobs#create'
     get '/blobs/:id', to: 'blobs#show'
