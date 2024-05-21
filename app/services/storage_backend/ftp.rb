@@ -38,6 +38,7 @@ module StorageBackend
             ftp_client
         end
 
+        #TODO: Extract it as helper for both ftp + local_storage
         def write_to_tmp_file(content)
             local_file_path = "/tmp/#{random_filename}"
             File.open(local_file_path, 'w') do |file|
