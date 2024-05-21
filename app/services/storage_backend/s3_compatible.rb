@@ -10,45 +10,35 @@ module StorageBackend
         end
 
         def put_object(path, content)
-            uri = URI.parse("#{@base_url}/#{path}")
-            http_method = "PUT"
-            canonical_uri = "/#{path}"
+            response = create_request_and_response(path, content, "PUT")
+            puts response.read_body
+            return path
+          end
+          
+          def get_object(path)
+            response = create_request_and_response(path, nil, "GET")
+            return response.body
+          end
 
+        private
+        def create_request_and_response(path, content, http_method)
+            uri = URI.parse("#{@base_url}/#{path}")
+            canonical_uri = "/#{path}"
+            
             content_sha256 = get_content_sha256(content)
             headers = generate_headers(content_sha256)
             datetime = headers[:"x-amz-date"]
             date = datetime[0,8]
-
+          
             canonical_request = get_canonical_request(http_method, canonical_uri, headers, content_sha256)
             credential_scope = get_credential_scope(datetime)
             string_to_sign = get_string_to_sign(datetime, credential_scope, canonical_request)
             authorization_header = generate_authorization_header(credential_scope, headers, signature(date, string_to_sign))
-
+          
             response = make_request(http_method, uri, content, headers, authorization_header)
-            puts response.read_body
-            return path
-        end
+            return response
+          end
 
-        def get_object(path)
-            uri = URI.parse("#{@base_url}/#{path}")
-            http_method = "GET"
-            canonical_uri = "/#{path}"
-
-            content_sha256 = get_content_sha256(nil)
-            headers = generate_headers(content_sha256)
-            datetime = headers[:"x-amz-date"]
-            date = datetime[0,8]
-
-            canonical_request = get_canonical_request(http_method, canonical_uri, headers, content_sha256)
-            credential_scope = get_credential_scope(datetime)
-            string_to_sign = get_string_to_sign(datetime, credential_scope, canonical_request)
-            authorization_header = generate_authorization_header(credential_scope, headers, signature(date, string_to_sign))
-
-            response = make_request(http_method, uri, nil, headers, authorization_header)
-            return response.body
-        end
-
-        private
         def get_content_sha256(content)
             if content
                 return Digest::SHA256.hexdigest(content)

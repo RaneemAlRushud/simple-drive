@@ -4,8 +4,6 @@ module StorageBackend
             @db_host = config[:host]
             @db_name = config[:name]
             @table_name = config[:table]
-            puts config
-            puts "------"
             create_db_if_not_exists
             create_table_if_not_exists
         end
@@ -39,9 +37,7 @@ module StorageBackend
 
         def create_db_if_not_exists
             conn = PG.connect("postgresql://localhost:5432/simple_drive_db_storage")
-            #TODO: it doesn't create a db even if it doesn't exit
             query = "SELECT FROM pg_database WHERE datname = '#{@db_name}'"
-
             result = conn.exec(query)
             if result.ntuples == 1
                 return
