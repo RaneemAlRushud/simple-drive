@@ -1,6 +1,7 @@
 require 'base64'
 class BlobsController < ApplicationController
   before_action :authenticate
+  include BlobsHelper
 
   def create
     id = params[:id]
@@ -10,6 +11,7 @@ class BlobsController < ApplicationController
       render json: {
         error: 'Blob already exists'
       }, status: :bad_request
+
     elsif !is_valid_base64?(data)
       render json: {
         error: 'Not valid base64'
@@ -44,11 +46,8 @@ class BlobsController < ApplicationController
     end
   end
 
-  private
-  def is_valid_base64?(value)
-    return false if !value.is_a?(String)
-    encoded_value = Base64.strict_encode64(Base64.decode64(value))
-    # No need to compare == padding
-    encoded_value.gsub("=", "") == value.chomp.gsub("=", "")
-  end
+  def index
+    @blobs = Blob.all
+    render json: @blobs
+   end
 end
