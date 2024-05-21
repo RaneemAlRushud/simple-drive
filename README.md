@@ -2,15 +2,15 @@
 
 > Ruby (3.1.5p252), Rails (7.1.3.2)
 <br>
-<br>
 
 
-**Table of Contents**
-* [Application Structure](#application-structure)
-* [Building and Running the app](#application-structure)
-* [Curl Requests](#testing-strategy)
-* [Testing](#building-and-running-the-application)
-* [Scenarios](#data-storage-options)
+## 💠 Table of Contents
+* [Solution Architecture](#solution-architecture)
+* [Building and Running](#building-running)
+* [Curl Requests](#curl-requests)
+* [Testing](#testing)
+* [Scenarios (Data Storage Options)](#data-storage-options)
+* [References](#references)
 
 ***
 ## 💠 Solution Architecture 
@@ -78,26 +78,51 @@ curl localhost:3000/v1/blobs --header 'Authorization: Bearer <generated-token>'
 ```
 
 ## 💠 Scenarios (Data Storage Options)
-### a. Amazon S3 Compatible Storage
+###  a. ✦ Amazon S3 Compatible Storage
 <p align= "center"> <img width="600" alt="aws-s3" src="https://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/253746ee-9181-4b11-bb0c-fa2e331da48b"> </p>
 
-### b. FTP
+###  b. ✦ FTP
 <p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/43bd3380-1f46-464e-b98a-d4f5ea5dfadd"> </p>
 
-### c. Postgres DB
+###  c. ✦ Postgres DB
 <p align= "center"> <img width="600" alt="DB" src="https://github.com/RaneemAlRushud/SimpleDrive/assets/59771760/2f230c57-cbc2-491d-a5cb-24930658b23b"> </p>
 
-### d. Local Storage 
+###  d. ✦ Local Storage 
 <p align= "center"> <img width="600" alt="FTP" src="https://github.com/RaneemAlRushud/simple-drive/assets/59771760/d217390a-07dc-4b0c-a042-c5f2688fced7"> </p>
 
 
 ## 💠 Testing
+### ✦ Utilized Testing Toolkit:
+  - [rspec-rails](https://rspec.info/)
+  - [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)
+  - [faker](https://github.com/faker-ruby/faker.git)
 
-
-- ### ✦ Unit Testing
-
+    <br>
   
-- ### ✦ Integration Testing
+### ✦ Unit Testing
+- a. User API request
+  
+| # | #1 | #2 | 
+|:-------------:|:-:|:-:|
+| Test use-case  | 200: generate token | 200: existing email passed | 
+  
+
+- b. Blob API request
+  
+| # | #1 | #2 | #3 | #4 | #5 |
+|:-------------:|:-:|:-:|:-:|:-:|:-:|
+| Test use-case  | 201: post data | 200: get data by id | 401: unauthenticated | 400: invalid base64 | 400: existed id |
+
+
+  <br> 
+  
+### ✦ Integration Testing
+- In our case, it scopes the data storage services:
+
+
+| # | #1 | #2 | #3 | #4 |
+|:-------------:|:-:|:-:|:-:|:-:|
+| Test use-case  | 201,200: store and retrieve from S3 | 201,200: store and retrieve from FTP | 201,200: store and retrieve from DB | 201,200: store and retrieve from Local |
 
 
 
