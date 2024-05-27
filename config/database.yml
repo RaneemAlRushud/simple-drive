@@ -17,13 +17,14 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
+  username: raneem
+  password: RaneemPass
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: simple_drive_development
-  username: raneem
-  password: RaneemPass
+
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -58,8 +59,7 @@ development:
 test:
   <<: *default
   database: simple_drive_test
-  username: raneem
-  password: RaneemPass
+
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,5 +84,4 @@ test:
 production:
   <<: *default
   database: simple_drive_production
-  username: raneem
-  password: RaneemPass
+
